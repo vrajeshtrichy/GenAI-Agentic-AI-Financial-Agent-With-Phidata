@@ -27,9 +27,10 @@ markdown = True,
 #Multi Model Agent
 multi_ai_agent = Agent(
 team = [web_search_agent, finance_agent],
-model=Groq(id="llama-3.1-70b-versatile"),
+model=Groq(id="llama-3.3-70b-versatile"),
 instructions = ["Always include sources", "Use tables to display the data"],
 show_tools_calls = True,
 markdown = True,
 )
 
+multi_ai_agent.print_response("Summarize analyst recommendation and share the latest news for Apple", stream = True)
