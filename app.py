@@ -23,3 +23,13 @@ instructions = ["Use tables to display the data"],
 show_tools_calls = True,
 markdown = True,
 )
+
+#Multi Model Agent
+multi_ai_agent = Agent(
+team = [web_search_agent, finance_agent],
+model=Groq(id="llama-3.1-70b-versatile"),
+instructions = ["Always include sources", "Use tables to display the data"],
+show_tools_calls = True,
+markdown = True,
+)
+
