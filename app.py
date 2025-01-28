@@ -3,7 +3,7 @@ from phi.model.groq import Groq
 from phi.tools.yfinance import YFinanceTools
 from phi.tools.duckduckgo import DuckDuckGo
 
-# Create DuckDuckGo web search agent
+# DuckDuckGo web search agent
 web_search_agent = Agent(
     name = "Web Search Agent",
     role = "Search the web for the information",
@@ -12,4 +12,14 @@ web_search_agent = Agent(
     instructions = ["Always include sources"],
     show_tools_calls = True,
     markdown = True,
+)
+
+# Financial Agent
+finance_agent = Agent(
+name = "Finance AI Agent",
+model = Groq(id = "llama-3.3-70b-versatile"),
+tools = [YFinanceTools(stock_price=True, analyst_recommendations=True, stock_fundamentals=True)],
+instructions = ["Use tables to display the data"],
+show_tools_calls = True,
+markdown = True,
 )
