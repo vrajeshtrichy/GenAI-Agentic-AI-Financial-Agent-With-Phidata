@@ -7,3 +7,6 @@ fastapi
 uvicorn
 groq
 python-multipart
+
+# Streamlit-app
+streamlit
