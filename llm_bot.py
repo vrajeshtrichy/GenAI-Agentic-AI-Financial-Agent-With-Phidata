@@ -54,3 +54,12 @@ if prompt := st.chat_input():
     if not phi_api_key:
         st.info("Please add your Phi API key to continue.")
         st.stop()
+
+    # client = OpenAI(api_key=openai_api_key)
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    st.chat_message("user").write(prompt)
+    response = multi_ai_agent.run("Summarize analyst recommendation and share the latest news for Apple", stream = False)
+    print(response)
+    msg = response.content
+    st.session_state.messages.append({"role": "assistant", "content": msg})
+    st.chat_message("assistant").write(msg)
