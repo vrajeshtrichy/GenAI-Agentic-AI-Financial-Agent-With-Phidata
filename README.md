@@ -5,7 +5,7 @@ An **Agentic AI-powered** chatbot designed to assist stock analysts by providing
 ## Features
 - Fetches real-time stock market data using `yfinance`
 - Provides financial news via `duckduckgo-search`
-- Supports AI-powered analysis with `groq`
+- Supports AI-powered analysis with `groq` using llama-3.3-70b-versatile
 - Interactive chatbot interface using `Streamlit`
 - Scalable and fast backend with `FastAPI` & `uvicorn`
 - Built using Phidata for agent development
@@ -13,7 +13,7 @@ An **Agentic AI-powered** chatbot designed to assist stock analysts by providing
 ## Tech Stack
 - **Backend**: FastAPI, Uvicorn
 - **Frontend**: Streamlit
-- **AI Engine**: Groq
+- **AI Engine**: Groq (using llama-3.3-70b-versatile)
 - **Data Sources**: yFinance, DuckDuckGo Search
 - **Agent Framework**: Phidata
 - **Environment Management**: python-dotenv
@@ -37,7 +37,7 @@ Create a `.env` file in the project root and add:
 PHI_API_KEY = your_api_key
 ```
 ```env
-GROQ_API_KEY =your_api_key
+GROQ_API_KEY = your_api_key
 ```
 
 ### Start the Streamlit Frontend
