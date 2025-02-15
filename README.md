@@ -1,5 +1,7 @@
 # Stock Analyst Assistant AI
 
+Checkout: [Xbot-Financial-Agent-AI-App](https://xbot-financial-agent-ai.streamlit.app/)
+
 An **Agentic AI-powered** chatbot designed to assist stock analysts by providing real-time stock market insights, financial data, and news. This application is built using `FastAPI` for backend processing and deployed as a `Streamlit` chatbot.
 
 ## Features
