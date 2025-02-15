@@ -59,7 +59,7 @@ if prompt := st.chat_input():
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
     response = multi_ai_agent.run(prompt, stream = False)
-    print(response)
+    print(response.content)
     msg = response.content
     st.session_state.messages.append({"role": "assistant", "content": msg})
     st.chat_message("assistant").write(msg)
