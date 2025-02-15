@@ -35,14 +35,12 @@ show_tools_calls = True,
 markdown = True,
 )
 
-# multi_ai_agent.print_response("Summarize analyst recommendation and share the latest news for Apple", stream = True)
 
+# with st.sidebar:
+#     phi_api_key = st.text_input("Phi API Key", key="phi_api_key", type="password")
 
-with st.sidebar:
-    phi_api_key = st.text_input("Phi API Key", key="phi_api_key", type="password")
-
-st.title("💬 Stock Analyst")
-st.caption("🚀 A Multi-Agentic AI chatbot powered by Llama")
+st.title("📈 Stock Analyst")
+st.caption("🤖 A Multi-Agentic AI chatbot powered by Llama")
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "Hello! How can I help you?"}]
@@ -55,7 +53,6 @@ if prompt := st.chat_input():
     #     st.info("Please add your Phi API key to continue.")
     #     st.stop()
 
-    # client = OpenAI(api_key=openai_api_key)
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
     response = multi_ai_agent.run(prompt, stream = False)
