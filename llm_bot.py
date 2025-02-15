@@ -51,14 +51,14 @@ for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
 
 if prompt := st.chat_input():
-    if not phi_api_key:
-        st.info("Please add your Phi API key to continue.")
-        st.stop()
+    # if not phi_api_key:
+    #     st.info("Please add your Phi API key to continue.")
+    #     st.stop()
 
     # client = OpenAI(api_key=openai_api_key)
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
-    response = multi_ai_agent.run("Summarize analyst recommendation and share the latest news for Apple", stream = False)
+    response = multi_ai_agent.run(prompt, stream = False)
     print(response)
     msg = response.content
     st.session_state.messages.append({"role": "assistant", "content": msg})
